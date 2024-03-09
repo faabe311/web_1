@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TechCon 2023 - Schedule</title>
+</head>
+
+<body>
+    
+    <header>
+        <h1>TechCon 2023 - Schedule</h1>
+        <nav>
+            <!-- Links to other pages -->
+            <a href="index.html">Home</a>
+            <a href="register.html">Registration</a>
+            <a href="speakers.html">Speakers</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="schedule-filter">
+            <h2>Conference Schedule</h2>
+
+            <!-- Filter options -->
+            <label for="dayFilter">Filter by Day:</label>
+            <select id="dayFilter" onchange="filterSchedule()">
+                <option value="all">All Days</option>
+                <option value="day1">Day 1</option>
+                <option value="day2">Day 2</option>
+                <option value="day3">Day 3</option>
+            </select>
+            <section class="conference-schedule">
+                <!-- Schedule Table -->
+                <table style="width:60%;">
+
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Event</th>
+                            <th>Speaker</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Schedule data -->
+                        <tr class="schedule-item day1">
+                            <td>09:00 AM</td>
+                            <td>Opening Keynote</td>
+                            <td>John Doe</td>
+                        </tr>
+                        <tr class="schedule-item day1">
+                            <td>011:00 AM</td>
+                            <td>Need for cybersecurity</td>
+                            <td>Rediet Abebe</td>
+                        </tr>
+                        <tr class="schedule-item day1">
+                            <td>01:00 AM</td>
+                            <td>Biology & enginering</td>
+                            <td>Todd Codeman</td>
+                        </tr>
+                        <tr class="schedule-item day1">
+                            <td>04:00 AM</td>
+                            <td>Data mining for dummies</td>
+                            <td>Philip S. Yu</td>
+                        </tr>
+                        <tr class="schedule-item day2">
+                            <td>10:00 AM</td>
+                            <td>Bioenginering research </td>
+                            <td>Todd Codeman</td>
+                        </tr>
+                        <tr class="schedule-item day2">
+                            <td>04:00 AM</td>
+                            <td>Advances in Data mining </td>
+                            <td>Philip S. Yu</td>
+                        </tr>
+                        <tr class="schedule-item day3">
+                            <td>10:30 AM</td>
+                            <td>The Data field </td>
+                            <td>Philip S. Yu</td>
+                        </tr>
+                        <tr class="schedule-item day3">
+                            <td>12:00 AM</td>
+                            <td>Technical Workshops</td>
+                            <td>Security </td>
+                        </tr>
+                        <tr class="schedule-item day3">
+                            <td>05:30 AM</td>
+                            <td>Medical invancments</td>
+                            <td>Todd Codeman</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 TechCon | All rights reserved</p>
+    </footer>
+
+    <!-- Java Script filter  -->
+    <script>
+        function filterSchedule() {
+            var selectedDay = document.getElementById('dayFilter').value;
+
+            // Show all schedule items initially
+            $('.schedule-item').show();
+
+            // If a specific day is selected, hide items for other days
+            if (selectedDay !== 'all') {
+                $('.schedule-item:not(.' + selectedDay + ')').hide();
+            }
+        }
+    </script>
+</body>
+
+</html>
