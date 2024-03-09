@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>TechCon 2023 - Speakers</title>
+</head>
+
+<body>
+  <header>
+    <h1>Meet Our Speakers</h1>
+    <nav>
+      <!-- Links to other pages -->
+      <a href="index.html">Home</a>
+      <a href="register.html">Registration</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Speaker Slideshow Section -->
+
+  <div class="container">
+    <!-- Slide 1 -->
+    <div class="mySlides">
+      <div class="numbertext">1 / 3</div>
+      <div class="speaker-container">
+        <img src="conferencePic2.jpg" class="speaker-image">
+        <div class="text speaker-text">
+          <h2>Rediet Abebe</h2>
+          <p><b>Bio:</b> An Ethiopian computer scientist working in algorithms and artificial intelligence. She and
+            Timnit Gebru founded the renowned global community Black in AI. Now Abebe continues research around data and
+            social inequality, among other topics, at UC Berkeley. Follow her if you love AI for social good!</p>
+          <p style="color:blue; font-family: courier;">Topic: Cybersecurity Trends</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="mySlides">
+      <div class="numbertext">2 / 3</div>
+      <img src="conferencePic3.jpg" class="speaker-image">
+      <div class="text speaker-text">
+        <h2>Todd Codeman</h2>
+        <p><b>Bio:</b>A professor of bioengineering at the University of California, San Diego. He uses tools for
+          information theory, neuroscience, machine learning, and bioelectronics to understand and control interacting
+          systems with biological and computer components. His research in flexible bio-electronics</p>
+        <p style="color:blue;" style="font-family:courier;">Topic: bioenginering</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="mySlides">
+      <div class="numbertext">3 / 3</div>
+      <img src="conferencePic4.jpg" class="speaker-image">
+      <div class="text speaker-text">
+        <h2>Philip S. Yu</h2>
+        <p><b>Bio:</b>an American computer scientist and professor of information technology at the University of
+          Illinois at Chicago. He is a prolific author, holds over 300 patents, and is known for his work in the field
+          of data mining.</p>
+        <p style="color:blue;" style="font-family:courier;">Topic: Data mining</p>
+      </div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <!-- Dots/bullets/indicators -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail images -->
+    <div class="row">
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="conferencePic2.jpg" style="width:100%" onclick="currentSlide(1)"
+            alt="Rediet Abe">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="conferencePic3.jpg" style="width:100%" onclick="currentSlide(2)"
+            alt="Speaker 2">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="conferencePic4.jpg" style="width:100%" onclick="currentSlide(3)"
+            alt="Philip S. Yu">
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for Slideshow -->
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+    </script>
+
+</body>
+
+</html>
